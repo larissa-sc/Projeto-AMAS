@@ -66,7 +66,7 @@
             border-bottom: #77aaff 3px solid;
         }
         header h1 {
-            color: #000000;
+            color: #000;
             text-align: center;
             margin: 0;
             font-size: 24px;
@@ -127,8 +127,9 @@
                     <li><a class="menu-link" href="../paginas/Post.html">Blog</a></li>
                     <li><a class="menu-link" href="../paginas/membros.html">Equipe</a></li>
                     <li><a class="menu-link" href="../paginas/parceiros.html">Parceiros</a></li>
+                    <li><a class="menu-link" href="../paginas/Datascomemorativas.html">Datas Importantes</a></li>
                     <li><a class="menu-link" href="../paginas/contatos.html">Contatos</a></li>
-                    <li><a class="menu-link" href="../../index.html #denuncie">Denuncie</a></li>
+                    <li><a class="menu-link" href="https://denuncie.rugidolgbtqi.com.br">Denuncie</a></li>
             </ul>
         </nav>
     </div>
@@ -139,22 +140,24 @@
         <div class="info-contatos">
             <h2>Informações de Contato</h2>
             <p><strong>E-mail:</strong> <a href="mailto:amaslgbt@gmail.com">amaslgbt@gmail.com</a></p>
-            <p><strong>Telefone:</strong> (81) -</p>
-            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/amaslgbt/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA%3D%3D">@amaslgbt</p>
+            <p><strong>Telefone:</strong> (81) 99775-5219</p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/amaslgbt/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA%3D%3D">@amaslgbt</a></p>
             <p><strong>Youtube:</strong> <a href="https://www.youtube.com">Seu Canal no YouTube</a></p>
             <p><strong>Endereço:</strong> Q 19, Quilombo 3, Palmares - PE</p>
+            <p><strong>Formulário de Cadastramento:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQdtVzNciXWKpiNOyxSfu08ugmsWzUTeM3t2VivncNo82X8A/viewform">Cadastre-se</a></p>
         </div>
         <div class="form-container">
             <h2>Envie uma Mensagem</h2>
-            <form action="#" method="post">
+            <form id="contactForm" action="#" method="post">
                 <input type="text" name="nome" placeholder="Nome" required>
                 <input type="email" name="email" placeholder="E-mail" required>
-                <input type="tel" name="telefone" placeholder="Telefone" required>
+                <input type="number" name="telefone" placeholder="Telefone" required>
                 <input type="text" name="cidade" placeholder="Cidade" required>
                 <textarea name="mensagem" placeholder="Mensagem" rows="5" required></textarea>
                 <button type="submit">Enviar</button>
             </form>
         </div>
     </div>
+    <script src="../paginas/scriptForms.js"></script>
 </body>
 </html>
