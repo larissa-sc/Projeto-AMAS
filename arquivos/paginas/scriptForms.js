@@ -16,24 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const cidade = form.cidade.value.trim();
     const mensagem = form.mensagem.value.trim();
 
-    const get = async () => {
-      try {
-        const response = await fetch(URL_SUPA + '?order=id.desc&limit=10', {
-            method: 'GET',
-            headers: HEADERS       
-          }
-        );
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
-        const json = await response.json();
-        adicionaTabela(json);
-    
-      } catch (error) {
-          console.error(error.message);
-      }
-    }
-
     if (nome && email && telefone && cidade && mensagem) {
       // Enviar os dados para o servidor mockado usando fetch
       fetch(URL_SUPA, {
@@ -47,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
           mensagens: mensagem
         })
       })
-
         .then(data => {
           console.log('Sucesso:', data);
           alert('Mensagem enviada com sucesso!');
@@ -62,3 +43,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+const getLista = async () => {
+  try {
+    const response = await fetch(URL_SUPA + '?order=id.desc&limit=10', {
+        method: 'GET',
+        headers: HEADERS       
+      }
+    );
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const json = await response.json();
+    adicionaTabela(json);
+
+  } catch (error) {
+      console.error(error.message);
+  }
+}
+
+const adicionaTabela = (data) => {
+  const tableBody = document.getElementById('nomes').querySelector('tbody');
+  tableBody.innerHTML = ''; // Limpa a tabela antes de adicionar os dados
+
+  data.forEach(item => {
+    const row = document.createElement('tr');
+
+    const nomeCell = document.createElement('td');
+    nomeCell.textContent = item.nome;
+    row.appendChild(nomeCell);
+
+    tableBody.appendChild(row);
+  });
+}
+window.onload = () => {getLista()}
